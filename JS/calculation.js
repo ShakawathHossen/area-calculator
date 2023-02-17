@@ -4,16 +4,22 @@ document.getElementById("triangle-btn").addEventListener("click", function () {
   const triangleBaseInput = document.getElementById("triangle-base");
   const triangleBaseString = triangleBaseInput.value;
   const triangleBase = parseFloat(triangleBaseString);
-  triangleBaseInput.value = "";
+    triangleBaseInput.value = "";
 
   // get triangle Hight input field
   const triangleHeightInput = document.getElementById("traingle-height");
   const triangleHeightString = triangleHeightInput.value;
   const triangleHeight = parseFloat(triangleHeightString);
-  triangleHeightInput.value = "";
+    triangleHeightInput.value = "";
 
   // make calculations for triangle
   const triangleArea = 0.5 * triangleBase * triangleHeight;
+  // error handle for NAN and negative numbers
+  if(isNaN(triangleArea) || triangleArea<0){
+    alert("Please enter a valid positive number");
+    return;
+
+  }
   // get result portal
   const resultPortal = document.getElementById("result-portal");
   const p = document.createElement("p");
@@ -36,17 +42,21 @@ document.getElementById("rectangle-btn").addEventListener("click", function() {
   const rectangleWidthString = rectangleWidthInput.value;
   const rectangleWidth = parseFloat(rectangleWidthString);
   rectangleWidthInput.value = "";
-  console.log(rectangleWidth);
   
   // get rectangleLength input field
   const rectangleLengthInput = document.getElementById("rectangle-length");
   const rectangleLengthString = rectangleLengthInput.value;
   const rectangleLength = parseFloat(rectangleLengthString);
   rectangleLengthInput.value = "";
-  console.log(rectangleLength);
 
     // make calculations for rectangle
     const rectangleArea =rectangleWidth * rectangleLength;
+    // error handle for NAN and negative numbers
+    if(isNaN(rectangleArea) || rectangleArea<0){
+        alert("Please enter a valid positive number");
+        return;
+    
+      }
     // get result portal
     const resultPortal = document.getElementById("result-portal");
     const p = document.createElement("p");
@@ -81,3 +91,63 @@ document.getElementById("parallelogram-btn").addEventListener("click", function(
 
 })
 
+// Rhombus card 
+// rhombus-btn get 
+document.getElementById("rhombus-btn").addEventListener("click", function() {
+    const diagonalOne=10;
+    const diagonalTwo=12;
+    const rhombusArea=0.5*diagonalOne+diagonalTwo;
+
+    // get result portal
+    const resultPortal = document.getElementById("result-portal");
+    const p = document.createElement("p");
+    p.innerHTML =
+      getNextSerialNumber() +
+      ". Rhombus" +
+      "  " +
+      rhombusArea.toFixed(2) +
+      "<span>cm <sup>2</sup></span>";
+    // append in result portal
+    resultPortal.appendChild(p);
+
+})
+// Pentagon card 
+// pentagon-btn get 
+document.getElementById("pentagon-btn").addEventListener("click", function() {
+    const pentagonPath=6;
+    const pentagonBase=10;
+    const pentagonArea=0.5*pentagonPath*pentagonBase;
+
+    // get result portal
+    const resultPortal = document.getElementById("result-portal");
+    const p = document.createElement("p");
+    p.innerHTML =
+      getNextSerialNumber() +
+      ". Pentagon" +
+      "  " +
+      pentagonArea.toFixed(2) +
+      "<span>cm <sup>2</sup></span>";
+    // append in result portal
+    resultPortal.appendChild(p);
+
+})
+// Ellipse card 
+// ellipse-btn get 
+document.getElementById("ellipse-btn").addEventListener("click", function() {
+    const ellipseA=10;
+    const ellipseB=4;
+    const ellipseArea=3.1416*ellipseA*ellipseB
+
+    // get result portal
+    const resultPortal = document.getElementById("result-portal");
+    const p = document.createElement("p");
+    p.innerHTML =
+      getNextSerialNumber() +
+      ". Ellipse" +
+      "  " +
+      ellipseArea.toFixed(2) +
+      "<span>cm <sup>2</sup></span>";
+    // append in result portal
+    resultPortal.appendChild(p);
+
+})
