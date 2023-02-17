@@ -15,7 +15,7 @@ document.getElementById("triangle-btn").addEventListener("click", function () {
   // make calculations for triangle
   const triangleArea = 0.5 * triangleBase * triangleHeight;
   // error handle for NAN and negative numbers
-  if(isNaN(triangleArea) || triangleArea<0){
+  if(isNaN(triangleArea) || triangleArea<0 || triangleArea==''){
     alert("Please enter a valid positive number");
     return;
 
@@ -52,7 +52,7 @@ document.getElementById("rectangle-btn").addEventListener("click", function() {
     // make calculations for rectangle
     const rectangleArea =rectangleWidth * rectangleLength;
     // error handle for NAN and negative numbers
-    if(isNaN(rectangleArea) || rectangleArea<0){
+    if(isNaN(rectangleArea) || rectangleArea<0 || rectangleArea==''){
         alert("Please enter a valid positive number");
         return;
     
