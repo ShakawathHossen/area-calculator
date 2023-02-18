@@ -15,7 +15,32 @@ function getBackHomeButton() {
 }
 
 // color chgane on mouseover
-document.getElementById("random").addEventListener('mouseenter',function(event) {
+document.getElementById("random1").addEventListener('mouseenter',function() {
   colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
-  event.target.style.backgroundColor =colors;
+  this.style.background =colors;
+})
+// color chgane on mouseover
+document.getElementById("random2").addEventListener('mouseenter',function() {
+  colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
+  this.style.background =colors;
+})
+// color chgane on mouseover
+document.getElementById("random3").addEventListener('mouseenter',function() {
+  colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
+  this.style.background =colors;
+})
+// color chgane on mouseover
+document.getElementById("random4").addEventListener('mouseenter',function() {
+  colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
+  this.style.background =colors;
+})
+// color chgane on mouseover
+document.getElementById("random5").addEventListener('mouseenter',function() {
+  colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
+  this.style.background =colors;
+})
+// color chgane on mouseover
+document.getElementById("random6").addEventListener('mouseenter',function() {
+  colors='rgb('+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+','+Math.round(Math.random() * 255)+')';
+  this.style.background =colors;
 })
