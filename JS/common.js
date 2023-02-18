@@ -28,13 +28,13 @@ function getBackHomeButton() {
   window.location.href = "index.html";
 }
 
-// color chgane on mouseover
+// multiplication function for reuse 
 function displayValue(a, b){ 
   const sum = (a*b); 
   return sum; 
 } 
 
-
+// color chgane on mouseenter function call
 function randomBackground(geometry){ 
   geometry.addEventListener('mouseenter', function() { 
   let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16); 

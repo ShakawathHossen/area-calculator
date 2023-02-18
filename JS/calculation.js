@@ -59,7 +59,7 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
   }
 
 
-  // make calculations for rectangle
+  // make calculations for rectangle with reuseable function
   const rectangleArea = displayValue(rectangleWidth, rectangleLength);
   // error handle for NAN and negative numbers
   if (isNaN(rectangleArea) || rectangleArea < 0 || rectangleArea == "") {
