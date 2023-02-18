@@ -13,7 +13,7 @@ document.getElementById("triangle-btn").addEventListener("click", function () {
   // make calculations for triangle with reuseable function
   const triangleArea = 0.5 * displayValue(triangleBase, triangleHeight);
   // error handle for NAN and negative numbers
-  if (isNaN(triangleArea) || triangleArea < 0 || triangleArea == "" || typeof(triangleBaseInput) != "number" || typeof(triangleHeightInput) != "number" ||triangleHeightInput < 0) {
+  if (isNaN(triangleArea) || triangleArea < 0 || triangleArea == "" || typeof(triangleBase) !== "number" || typeof(triangleHeight) !== "number" ||triangleHeightInput < 0) {
     alert("Please enter a valid positive number");
     return;
   }
@@ -56,7 +56,7 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
   // make calculations for rectangle with reuseable function
   const rectangleArea = displayValue(rectangleWidth, rectangleLength);
   // error handle for NAN and negative numbers
-  if (isNaN(rectangleArea) || rectangleArea < 0 || rectangleArea == " " ||typeof(rectangleWidthInput) != "number" || typeof(rectangleLengthInput) !="number" ||rectangleLengthInput < 0) {
+  if (isNaN(rectangleArea) || rectangleArea < 0 || rectangleArea == " " ||typeof(rectangleWidth) != "number" || typeof(rectangleLength) !="number" ||rectangleLengthInput < 0) {
     alert("Please enter a valid positive number");
     return;
   }
