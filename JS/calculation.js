@@ -11,13 +11,13 @@ document.getElementById("triangle-btn").addEventListener("click", function () {
   const triangleHeightString = triangleHeightInput.value;
   const triangleHeight = parseFloat(triangleHeightString);
   triangleHeightInput.value = "";
-  if (triangleHeight < 0 ) {
+  if (triangleHeight < 0) {
     alert("Please enter a valid positive number");
     return;
   }
 
-  // make calculations for triangle
-  const triangleArea = 0.5 * triangleBase * triangleHeight;
+  // make calculations for triangle with reuseable function
+  const triangleArea = 0.5 * displayValue(triangleBase, triangleHeight);
   // error handle for NAN and negative numbers
   if (isNaN(triangleArea) || triangleArea < 0 || triangleArea == "") {
     alert("Please enter a valid positive number");
@@ -26,7 +26,15 @@ document.getElementById("triangle-btn").addEventListener("click", function () {
   // get result portal
   const resultPortal = document.getElementById("result-portal");
   const p = document.createElement("p");
-  p.innerHTML =getNextSerialNumber() +". Traingle" +"  " +triangleArea.toFixed(2) +"<span>cm <sup>2</sup></span>" +'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>";
+  p.innerHTML =
+    getNextSerialNumber() +
+    ". Traingle" +
+    "  " +
+    triangleArea.toFixed(2) +
+    "<span>cm <sup>2</sup></span>" +
+    "   " +
+    " " +
+    "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
   // append in result portal
   resultPortal.appendChild(p);
 });
@@ -45,9 +53,14 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
   const rectangleLengthString = rectangleLengthInput.value;
   const rectangleLength = parseFloat(rectangleLengthString);
   rectangleLengthInput.value = "";
+  if (rectangleLength < 0) {
+    alert("Please enter a valid positive number");
+    return;
+  }
+
 
   // make calculations for rectangle
-  const rectangleArea = rectangleWidth * rectangleLength;
+  const rectangleArea = displayValue(rectangleWidth, rectangleLength);
   // error handle for NAN and negative numbers
   if (isNaN(rectangleArea) || rectangleArea < 0 || rectangleArea == "") {
     alert("Please enter a valid positive number");
@@ -60,7 +73,11 @@ document.getElementById("rectangle-btn").addEventListener("click", function () {
     getNextSerialNumber() +
     ". Rectangle" +
     "  " +
-    rectangleArea.toFixed(2) +"<span>cm <sup>2</sup></span>"+'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>" ;
+    rectangleArea.toFixed(2) +
+    "<span>cm <sup>2</sup></span>" +
+    "   " +
+    " " +
+    "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
   // append in result portal
   resultPortal.appendChild(p);
 });
@@ -82,7 +99,10 @@ document
       ". Parallelogram" +
       "  " +
       parallegramArea.toFixed(2) +
-      "<span>cm <sup>2</sup></span>"+'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>";
+      "<span>cm <sup>2</sup></span>" +
+      "   " +
+      " " +
+      "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
     // append in result portal
     resultPortal.appendChild(p);
   });
@@ -102,7 +122,10 @@ document.getElementById("rhombus-btn").addEventListener("click", function () {
     ". Rhombus" +
     "  " +
     rhombusArea.toFixed(2) +
-    "<span>cm <sup>2</sup></span>"+'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>";
+    "<span>cm <sup>2</sup></span>" +
+    "   " +
+    " " +
+    "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
   // append in result portal
   resultPortal.appendChild(p);
 });
@@ -120,7 +143,11 @@ document.getElementById("pentagon-btn").addEventListener("click", function () {
     getNextSerialNumber() +
     ". Pentagon" +
     "  " +
-    pentagonArea.toFixed(2) +"<span>cm <sup>2</sup></span>"+'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>";
+    pentagonArea.toFixed(2) +
+    "<span>cm <sup>2</sup></span>" +
+    "   " +
+    " " +
+    "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
   // append in result portal
   resultPortal.appendChild(p);
 });
@@ -138,7 +165,11 @@ document.getElementById("ellipse-btn").addEventListener("click", function () {
     getNextSerialNumber() +
     ". Ellipse" +
     "  " +
-    ellipseArea.toFixed(2) +"<span>cm <sup>2</sup></span>"+'   '+' '+ "<span style='color: white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px;' >Convet to m<sup>2</sup></span>";
+    ellipseArea.toFixed(2) +
+    "<span>cm <sup>2</sup></span>" +
+    "   " +
+    " " +
+    "<button style='color:white; background-color: #0B5ED7; padding: 6px 8px; border-radius: 2px; border: none;'>Convet to m<sup>2</sup></button>";
   // append in result portal
   resultPortal.appendChild(p);
 });
